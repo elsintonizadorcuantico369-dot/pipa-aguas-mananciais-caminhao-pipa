@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminhão Pipa Rio de Janeiro | Águas Mananciais</title>
+    <meta name="description" content="Caminhão pipa no Rio de Janeiro. Entrega rápida de água potável e não potável. Atendemos Jacarepaguá, Barra, Recreio e região metropolitana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: #08090C;
+            color: #F2F4F8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(8, 9, 12, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(26, 111, 212, 0.2);
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #1A6FD4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #1A6FD4;
+            color: #F2F4F8;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-phone:hover {
+            background: #4D9FFF;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #08090C 0%, #0d1117 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(26, 111, 212, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-eyebrow {
+            display: inline-block;
+            background: rgba(245, 197, 66, 0.15);
+            color: #F5C542;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: #F2F4F8;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero h1 .highlight {
+            color: #1A6FD4;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #8892A4;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .proof-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+        
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .proof-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(26, 111, 212, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .proof-text strong {
+            display: block;
+            font-size: 18px;
+            color: #F2F4F8;
+            font-weight: 700;
+        }
+        
+        .proof-text span {
+            font-size: 14px;
+            color: #8892A4;
+        }
+        
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tag {
+            background: rgba(77, 159, 255, 0.1);
+            border: 1px solid rgba(77, 159, 255, 0.3);
+            color: #4D9FFF;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #1A6FD4;
+            color: #F2F4F8;
+            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #4D9FFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(26, 111, 212, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(242, 244, 248, 0.1);
+            color: #F2F4F8;
+            border: 2px solid rgba(242, 244, 248, 0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(242, 244, 248, 0.15);
+            border-color: rgba(242, 244, 248, 0.4);
+        }
+        
+        /* Section */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-eyebrow {
+            display: inline-block;
+            background: rgba(26, 111, 212, 0.15);
+            color: #1A6FD4;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
+            color: #F2F4F8;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #8892A4;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Pain Points */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .pain-card {
+            background: rgba(242, 244, 248, 0.03);
+            border: 1px solid rgba(242, 244, 248, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .pain-card:hover {
+            background: rgba(242, 244, 248, 0.05);
+            border-color: rgba(26, 111, 212, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .pain-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(245, 197, 66, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .pain-card h3 {
+            font-size: 24px;
+            color: #F2F4F8;
+            margin-bottom: 12px;
+        }
+        
+        .pain-card p {
+            color: #8892A4;
+            font-size: 16px;
+        }
+        
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .review-card {
+            background: rgba(242, 244, 248, 0.03);
+            border: 1px solid rgba(242, 244, 248, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1A6FD4, #4D9FFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #F2F4F8;
+        }
+        
+        .review-info h4 {
+            font-size: 18px;
+            color: #F2F4F8;
+            margin-bottom: 5px;
+        }
+        
+        .review-stars {
+            color: #F5C542;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+        
+        .review-text {
+            color: #8892A4;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .review-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(242, 244, 248, 0.05);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #8892A4;
+        }
+        
+        .google-icon {
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        /* How it Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+        }
+        
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1A6FD4, #4D9FFF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: #F2F4F8;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
+        }
+        
+        .step-card h3 {
+            font-size: 22px;
+            color: #F2F4F8;
+            margin-bottom: 12px;
+        }
+        
+        .step-card p {
+            color: #8892A4;
+            font-size: 16px;
+        }
+        
+        /* Coverage */
+        .coverage-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .coverage-tag {
+            background: rgba(26, 111, 212, 0.1);
+            border: 1px solid rgba(26, 111, 212, 0.3);
+            color: #4D9FFF;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .coverage-tag:hover {
+            background: rgba(26, 111, 212, 0.2);
+            border-color: #1A6FD4;
+            transform: translateY(-2px);
+        }
+        
+        /* Map */
+        .map-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+        
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85);
+        }
+        
+        .radar-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+        }
+        
+        .radar-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(26, 111, 212, 0.6);
+            border-radius: 50%;
+            animation: radar-pulse 3s infinite;
+        }
+        
+        .radar-ring:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+        }
+        
+        .radar-ring:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            animation-delay: 1s;
+        }
+        
+        .radar-ring:nth-child(3) {
+            width: 140px;
+            height: 140px;
+            animation-delay: 2s;
+        }
+        
+        .radar-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: #1A6FD4;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(26, 111, 212, 0.8);
+        }
+        
+        @keyframes radar-pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1A6FD4 0%, #4D9FFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 42px;
+            color: #F2F4F8;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 20px;
+            color: rgba(242, 244, 248, 0.9);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-content .btn {
+            background: #F2F4F8;
+            color: #1A6FD4;
+        }
+        
+        .cta-content .btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #05060a;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(242, 244, 248, 0.08);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 26px;
+            color: #1A6FD4;
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: #8892A4;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .footer-contact h4 {
+            font-size: 18px;
+            color: #F2F4F8;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact p {
+            color: #8892A4;
+            font-size: 15px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .footer-contact a {
+            color: #4D9FFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-contact a:hover {
+            color: #1A6FD4;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(242, 244, 248, 0.08);
+            color: #8892A4;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #1A6FD4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+        
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: #fff;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            }
+        }
+        
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
+            }
+            
+            .proof-bar {
+                gap: 20px;
+            }
+            
+            .nav-phone span {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 18px;
+            }
+            
+            .map-wrapper {
+                height: 400px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-content h2 {
+                font-size: 32px;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="logo">Águas Mananciais</div>
+            <a href="https://wa.me/5521964076066" class="nav-phone">
+                <span>📞</span>
+                <span>(21) 96407-6066</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <span class="hero-eyebrow">⚠️ Falta de água?</span>
+                <h1>Acabou a Água em <span class="highlight">Jacarepaguá e Região</span>?<br>Entregamos em Até 2 Horas</h1>
+                <p class="hero-subtitle">Chega de esperar a companhia de água resolver. Caminhão pipa disponível agora para residências, condomínios, empresas e obras no Rio de Janeiro.</p>
+                
+                <div class="proof-bar">
+                    <div class="proof-item">
+                        <div class="proof-icon">⭐</div>
+                        <div class="proof-text">
+                            <strong>5.0 Estrelas</strong>
+                            <span>Avaliação Google</span>
+                        </div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-icon">🚚</div>
+                        <div class="proof-text">
+                            <strong>Entrega Rápida</strong>
+                            <span>Em até 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-icon">💧</div>
+                        <div class="proof-text">
+                            <strong>Água Tratada</strong>
+                            <span>Potável e não potável</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-tags">
+                    <span class="tag">Jacarepaguá</span>
+                    <span class="tag">Barra da Tijuca</span>
+                    <span class="tag">Recreio dos Bandeirantes</span>
+                    <span class="tag">Campo Grande</span>
+                    <span class="tag">Região Metropolitana</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5521964076066" class="btn btn-primary">
+                        <span>💬</span>
+                        Pedir Agora no WhatsApp
+                    </a>
+                    <a href="tel:+5521964076066" class="btn btn-secondary">
+                        <span>📞</span>
+                        Ligar Agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">O Problema</span>
+                <h2>Sabemos o Quanto é Desesperador<br>Ficar Sem Água</h2>
+                <p>Você não está sozinho. Centenas de famílias e empresas enfrentam isso diariamente no Rio de Janeiro.</p>
+            </div>
+            
+            <div class="pain-grid">
+                <div class="pain-card reveal">
+                    <div class="pain-icon">🏠</div>
+                    <h3>Caixa d'água Vazia</h3>
+                    <p>A água acabou no meio do dia e a família toda está sem poder tomar banho, lavar louça ou usar o banheiro.</p>
+                </div>
+                
+                <div class="pain-card reveal">
+                    <div class="pain-icon">🏢</div>
+                    <h3>Obra Parada</h3>
+                    <p>Seu projeto atrasando e perdendo dinheiro porque falta água para continuar a construção.</p>
+                </div>
+                
+                <div class="pain-card reveal">
+                    <div class="pain-icon">⏰</div>
+                    <h3>Espera Sem Prazo</h3>
+                    <p>Você liga para a companhia de água e ninguém sabe quando o abastecimento volta. Pode ser horas ou dias.</p>
+                </div>
+                
+                <div class="pain-card reveal">
+                    <div class="pain-icon">😰</div>
+                    <h3>Condomínio em Crise</h3>
+                    <p>Dezenas de famílias sem água, síndico pressionado e urgência para resolver antes que vire um caos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section style="background: rgba(242, 244, 248, 0.02);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Depoimentos</span>
+                <h2>O Que Nossos Clientes Dizem</h2>
+                <p>Centenas de famílias e empresas já resolveram a falta de água conosco</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <div class="review-avatar">A</div>
+                        <div class="review-info">
+                            <h4>Cliente Verificado</h4>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Atendimento rápido e profissional. A água chegou em menos de 2 horas e resolveu nosso problema. Recomendo!"</p>
+                    <span class="review-badge">
+                        <span class="google-icon"></span>
+                        Avaliação Google
+                    </span>
+                </div>
+                
+                <div class="review-card reveal">
+                    <div class="review-header">
+                        <div class="review-avatar">B</div>
+                        <div class="review-info">
+                            <h4>Cliente Verificado</h4>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Excelente serviço! Precisei de água urgente para minha obra e a entrega foi pontual. Empresa séria e confiável."</p>
+                    <span class="review-badge">
+                        <span class="google-icon"></span>
+                        Avaliação Google
