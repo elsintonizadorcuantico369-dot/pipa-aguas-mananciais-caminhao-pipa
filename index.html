@@ -3,900 +3,598 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caminhão Pipa Rio de Janeiro | Águas Mananciais</title>
-    <meta name="description" content="Caminhão pipa no Rio de Janeiro. Entrega rápida de água potável e não potável. Atendemos Jacarepaguá, Barra, Recreio e região metropolitana.">
+    <title>Águas Mananciais Caminhão Pipa - Água Potável no Rio de Janeiro e Região</title>
+    <meta name="description" content="Águas Mananciais Caminhão Pipa: Entrega de água potável de qualidade para sua casa, empresa, obra ou evento no Rio de Janeiro e região. Atendimento rápido e eficiente.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #08090C;
+            --primary-color: #1A6FD4;
+            --secondary-color: #4D9FFF;
+            --text-color: #F2F4F8;
+            --star-color: #FFD700; /* Gold for stars */
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Barlow', sans-serif;
-            background: #08090C;
-            color: #F2F4F8;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        
-        h1, h2, h3, h4 {
+
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Barlow Condensed', sans-serif;
             font-weight: 700;
-            line-height: 1.1;
+            color: var(--text-color);
+            margin-bottom: 1rem;
         }
-        
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.8rem; }
+        h3 { font-size: 2.2rem; }
+        h4 { font-size: 1.8rem; }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
-        
+
+        .section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .section-heading {
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-size: 3rem;
+        }
+
         /* Navbar */
-        nav {
-            position: fixed;
+        .navbar {
+            background-color: var(--bg-color);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(8, 9, 12, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(26, 111, 212, 0.2);
         }
-        
-        nav .container {
+
+        .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
         }
-        
-        .logo {
+
+        .navbar-brand {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 22px;
-            font-weight: 800;
-            color: #1A6FD4;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-phone {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #1A6FD4;
-            color: #F2F4F8;
-            padding: 10px 20px;
-            border-radius: 6px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
             text-decoration: none;
+        }
+
+        .navbar-contact {
+            font-size: 1.1rem;
             font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
         }
-        
-        .nav-phone:hover {
-            background: #4D9FFF;
-            transform: translateY(-2px);
+
+        .navbar-contact a {
+            color: var(--secondary-color);
+            margin-left: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        /* Hero */
+
+        .navbar-contact a:hover {
+            background-color: var(--secondary-color);
+            color: var(--bg-color);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
         .hero {
-            margin-top: 70px;
-            padding: 60px 0 80px;
-            background: linear-gradient(135deg, #08090C 0%, #0d1117 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(rgba(8, 9, 12, 0.8), rgba(8, 9, 12, 0.8)), url('https://via.placeholder.com/1920x800/08090C/F2F4F8?text=Caminhao+Pipa+Hero') no-repeat center center/cover;
+            padding: 8rem 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(26, 111, 212, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
+
         .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-eyebrow {
-            display: inline-block;
-            background: rgba(245, 197, 66, 0.15);
-            color: #F5C542;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            color: #F2F4F8;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-        
-        .hero h1 .highlight {
-            color: #1A6FD4;
-        }
-        
-        .hero-subtitle {
-            font-size: 20px;
-            color: #8892A4;
-            margin-bottom: 30px;
-            max-width: 700px;
-        }
-        
-        .proof-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-            padding: 20px 0;
-        }
-        
-        .proof-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .proof-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(26, 111, 212, 0.15);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-        
-        .proof-text strong {
-            display: block;
-            font-size: 18px;
-            color: #F2F4F8;
-            font-weight: 700;
-        }
-        
-        .proof-text span {
-            font-size: 14px;
-            color: #8892A4;
-        }
-        
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .tag {
-            background: rgba(77, 159, 255, 0.1);
-            border: 1px solid rgba(77, 159, 255, 0.3);
-            color: #4D9FFF;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .btn-primary {
-            background: #1A6FD4;
-            color: #F2F4F8;
-            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
-        }
-        
-        .btn-primary:hover {
-            background: #4D9FFF;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(26, 111, 212, 0.6);
-        }
-        
-        .btn-secondary {
-            background: rgba(242, 244, 248, 0.1);
-            color: #F2F4F8;
-            border: 2px solid rgba(242, 244, 248, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(242, 244, 248, 0.15);
-            border-color: rgba(242, 244, 248, 0.4);
-        }
-        
-        /* Section */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-eyebrow {
-            display: inline-block;
-            background: rgba(26, 111, 212, 0.15);
-            color: #1A6FD4;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .section-header h2 {
-            font-size: 42px;
-            color: #F2F4F8;
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: #8892A4;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Pain Points */
-        .pain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .pain-card {
-            background: rgba(242, 244, 248, 0.03);
-            border: 1px solid rgba(242, 244, 248, 0.08);
-            border-radius: 12px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .pain-card:hover {
-            background: rgba(242, 244, 248, 0.05);
-            border-color: rgba(26, 111, 212, 0.3);
-            transform: translateY(-5px);
-        }
-        
-        .pain-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(245, 197, 66, 0.15);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        
-        .pain-card h3 {
-            font-size: 24px;
-            color: #F2F4F8;
-            margin-bottom: 12px;
-        }
-        
-        .pain-card p {
-            color: #8892A4;
-            font-size: 16px;
-        }
-        
-        /* Reviews */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        
-        .review-card {
-            background: rgba(242, 244, 248, 0.03);
-            border: 1px solid rgba(242, 244, 248, 0.08);
-            border-radius: 12px;
-            padding: 30px;
-            position: relative;
-        }
-        
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .review-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1A6FD4, #4D9FFF);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: 700;
-            color: #F2F4F8;
-        }
-        
-        .review-info h4 {
-            font-size: 18px;
-            color: #F2F4F8;
-            margin-bottom: 5px;
-        }
-        
-        .review-stars {
-            color: #F5C542;
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
-        
-        .review-text {
-            color: #8892A4;
-            font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-        
-        .review-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(242, 244, 248, 0.05);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            color: #8892A4;
-        }
-        
-        .google-icon {
-            width: 16px;
-            height: 16px;
-            background: #fff;
-            border-radius: 3px;
-            display: inline-block;
-        }
-        
-        /* How it Works */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            position: relative;
-        }
-        
-        .step-card {
-            text-align: center;
-            position: relative;
-        }
-        
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1A6FD4, #4D9FFF);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: 800;
-            color: #F2F4F8;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 20px rgba(26, 111, 212, 0.4);
-        }
-        
-        .step-card h3 {
-            font-size: 22px;
-            color: #F2F4F8;
-            margin-bottom: 12px;
-        }
-        
-        .step-card p {
-            color: #8892A4;
-            font-size: 16px;
-        }
-        
-        /* Coverage */
-        .coverage-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
             max-width: 900px;
             margin: 0 auto;
         }
-        
-        .coverage-tag {
-            background: rgba(26, 111, 212, 0.1);
-            border: 1px solid rgba(26, 111, 212, 0.3);
-            color: #4D9FFF;
-            padding: 12px 24px;
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 1rem 2.5rem;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 1.3rem;
             font-weight: 600;
-            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
             cursor: pointer;
         }
-        
-        .coverage-tag:hover {
-            background: rgba(26, 111, 212, 0.2);
-            border-color: #1A6FD4;
-            transform: translateY(-2px);
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            text-decoration: none;
         }
-        
-        /* Map */
-        .map-container {
+
+        /* Pain Points & How It Works Grid */
+        .grid-4-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .grid-item {
+            background-color: rgba(26, 111, 212, 0.1); /* Primary color with transparency */
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(26, 111, 212, 0.3);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(26, 111, 212, 0.2);
+        }
+
+        .grid-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .grid-item p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .grid-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* How It Works Specific Styling */
+        .how-it-works .grid-item {
+            counter-increment: step-counter;
             position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            padding-top: 3rem; /* Space for the number */
         }
-        
+
+        .how-it-works .grid-item::before {
+            content: counter(step-counter);
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Barlow Condensed', sans-serif;
+            border: 2px solid var(--secondary-color);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: rgba(26, 111, 212, 0.05); /* Lighter background for contrast */
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .review-card .stars {
+            color: var(--star-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .review-card .author {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Bairros Section */
+        .bairros-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .bairros-list li {
+            background-color: rgba(77, 159, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0; /* No top/bottom padding, map fills */
+            background-color: var(--bg-color);
+        }
+
         .map-wrapper {
             position: relative;
-            width: 100%;
-            height: 500px;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 3rem;
+            border: 2px solid var(--primary-color);
         }
-        
+
         .map-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border: none;
-            filter: invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85);
+            border: 0;
+            filter: invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85); /* Dark mode map */
         }
-        
-        .radar-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            pointer-events: none;
+
+        /* Final CTA */
+        .final-cta {
+            background-color: var(--primary-color);
+            padding: 6rem 0;
+            color: var(--text-color);
         }
-        
-        .radar-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 2px solid rgba(26, 111, 212, 0.6);
-            border-radius: 50%;
-            animation: radar-pulse 3s infinite;
+
+        .final-cta h2 {
+            color: var(--text-color);
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
         }
-        
-        .radar-ring:nth-child(1) {
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-        }
-        
-        .radar-ring:nth-child(2) {
-            width: 100px;
-            height: 100px;
-            animation-delay: 1s;
-        }
-        
-        .radar-ring:nth-child(3) {
-            width: 140px;
-            height: 140px;
-            animation-delay: 2s;
-        }
-        
-        .radar-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 16px;
-            height: 16px;
-            background: #1A6FD4;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(26, 111, 212, 0.8);
-        }
-        
-        @keyframes radar-pulse {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(2);
-                opacity: 1;
-            }
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #1A6FD4 0%, #4D9FFF 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-        
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .cta-content h2 {
-            font-size: 42px;
-            color: #F2F4F8;
-            margin-bottom: 20px;
-        }
-        
-        .cta-content p {
-            font-size: 20px;
-            color: rgba(242, 244, 248, 0.9);
-            margin-bottom: 30px;
-            max-width: 700px;
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
-        
-        .cta-content .btn {
-            background: #F2F4F8;
-            color: #1A6FD4;
-        }
-        
-        .cta-content .btn:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background: #05060a;
-            padding: 60px 0 30px;
-            border-top: 1px solid rgba(242, 244, 248, 0.08);
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-brand h3 {
-            font-size: 26px;
-            color: #1A6FD4;
-            margin-bottom: 15px;
-        }
-        
-        .footer-brand p {
-            color: #8892A4;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        
-        .footer-contact h4 {
-            font-size: 18px;
-            color: #F2F4F8;
-            margin-bottom: 15px;
-        }
-        
-        .footer-contact p {
-            color: #8892A4;
-            font-size: 15px;
-            margin-bottom: 10px;
-            line-height: 1.7;
-        }
-        
-        .footer-contact a {
-            color: #4D9FFF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-contact a:hover {
-            color: #1A6FD4;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(242, 244, 248, 0.08);
-            color: #8892A4;
-            font-size: 14px;
-        }
-        
-        .footer-bottom a {
-            color: #1A6FD4;
-            text-decoration: none;
+
+        .payment-methods {
+            margin-top: 2rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
-        
-        /* WhatsApp Button */
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(242, 244, 248, 0.7);
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        .footer a {
+            color: var(--secondary-color);
+        }
+
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background: #25D366;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366; /* WhatsApp green */
+            color: var(--text-color);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 999;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            transition: transform 0.3s ease;
             animation: pulse 2s infinite;
         }
-        
+
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+            animation: none; /* Stop pulse on hover */
         }
-        
-        .whatsapp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: #fff;
-        }
-        
+
         @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
-            50% {
-                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-        
-        /* Reveal Animation */
-        .reveal {
-            opacity: 1;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero p { font-size: 1.3rem; }
+            .section-heading { font-size: 2.5rem; }
+            .navbar-brand { font-size: 1.5rem; }
+            .navbar-contact a { font-size: 1rem; padding: 0.4rem 0.8rem; }
         }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero-subtitle {
-                font-size: 18px;
-            }
-            
-            .section-header h2 {
-                font-size: 32px;
-            }
-            
-            .proof-bar {
-                gap: 20px;
-            }
-            
-            .nav-phone span {
-                display: none;
-            }
-            
-            .logo {
-                font-size: 18px;
-            }
-            
-            .map-wrapper {
-                height: 400px;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .cta-content h2 {
-                font-size: 32px;
-            }
-            
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .whatsapp-float svg {
-                width: 28px;
-                height: 28px;
-            }
+            .hero { padding: 6rem 0; min-height: 60vh; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .section { padding: 4rem 0; }
+            .section-heading { font-size: 2rem; margin-bottom: 2rem; }
+            .grid-4-cols { grid-template-columns: 1fr; }
+            .navbar .container { flex-direction: column; text-align: center; }
+            .navbar-brand { margin-bottom: 1rem; }
+            .navbar-contact { margin-top: 0.5rem; }
+            .whatsapp-float { bottom: 1rem; right: 1rem; width: 50px; height: 50px; font-size: 1.8rem; }
+            .final-cta h2 { font-size: 2.5rem; }
+            .final-cta p { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .btn { padding: 0.8rem 2rem; font-size: 1.1rem; }
+            .grid-item h3 { font-size: 1.5rem; }
+            .grid-item p { font-size: 1rem; }
+            .review-card { padding: 1.5rem; }
+            .bairros-list li { font-size: 0.9rem; padding: 0.6rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
+    <header class="navbar">
         <div class="container">
-            <div class="logo">Águas Mananciais</div>
-            <a href="https://wa.me/5521964076066" class="nav-phone">
-                <span>📞</span>
-                <span>(21) 96407-6066</span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content reveal">
-                <span class="hero-eyebrow">⚠️ Falta de água?</span>
-                <h1>Acabou a Água em <span class="highlight">Jacarepaguá e Região</span>?<br>Entregamos em Até 2 Horas</h1>
-                <p class="hero-subtitle">Chega de esperar a companhia de água resolver. Caminhão pipa disponível agora para residências, condomínios, empresas e obras no Rio de Janeiro.</p>
-                
-                <div class="proof-bar">
-                    <div class="proof-item">
-                        <div class="proof-icon">⭐</div>
-                        <div class="proof-text">
-                            <strong>5.0 Estrelas</strong>
-                            <span>Avaliação Google</span>
-                        </div>
-                    </div>
-                    <div class="proof-item">
-                        <div class="proof-icon">🚚</div>
-                        <div class="proof-text">
-                            <strong>Entrega Rápida</strong>
-                            <span>Em até 2 horas</span>
-                        </div>
-                    </div>
-                    <div class="proof-item">
-                        <div class="proof-icon">💧</div>
-                        <div class="proof-text">
-                            <strong>Água Tratada</strong>
-                            <span>Potável e não potável</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero-tags">
-                    <span class="tag">Jacarepaguá</span>
-                    <span class="tag">Barra da Tijuca</span>
-                    <span class="tag">Recreio dos Bandeirantes</span>
-                    <span class="tag">Campo Grande</span>
-                    <span class="tag">Região Metropolitana</span>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5521964076066" class="btn btn-primary">
-                        <span>💬</span>
-                        Pedir Agora no WhatsApp
-                    </a>
-                    <a href="tel:+5521964076066" class="btn btn-secondary">
-                        <span>📞</span>
-                        Ligar Agora
-                    </a>
-                </div>
+            <a href="#" class="navbar-brand">Águas Mananciais Caminhão Pipa</a>
+            <div class="navbar-contact">
+                <a href="https://wa.me/5521964076066" target="_blank" rel="noopener noreferrer">
+                    <span style="margin-right: 0.5rem;">&#x2706;</span> +55 21 96407-6066
+                </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Pain Points -->
-    <section>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Não deixe a falta de água parar sua vida.</h1>
+                <p>Garanta o abastecimento contínuo e de qualidade para sua casa, empresa ou obra no <strong>Rio de Janeiro e região</strong>. Água potável certificada, entregue com agilidade e segurança.</p>
+                <a href="https://wa.me/5521964076066" target="_blank" rel="noopener noreferrer" class="btn">Solicite seu Orçamento via WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="dores" class="section">
+            <div class="container">
+                <h2 class="section-heading">Não sofra mais com a falta de água!</h2>
+                <div class="grid-4-cols">
+                    <div class="grid-item">
+                        <span class="icon">&#128167;</span> <!-- Water drop icon -->
+                        <h3>Reservatório Vazio</h3>
+                        <p>Caixa d'água ou cisterna secas? Garanta o abastecimento contínuo e evite transtornos.</p>
+                    </div>
+                    <div class="grid-item">
+                        <span class="icon">&#128679;</span> <!-- Construction icon -->
+                        <h3>Obras Paradas</h3>
+                        <p>Sua construção precisa de água para concreto, limpeza ou paisagismo? Não perca prazos.</p>
+                    </div>
+                    <div class="grid-item">
+                        <span class="icon">&#127946;</span> <!-- Swimming pool icon -->
+                        <h3>Piscina sem Enchimento</h3>
+                        <p>Encha sua piscina rapidamente para lazer ou eventos. Água de qualidade para diversão garantida.</p>
+                    </div>
+                    <div class="grid-item">
+                        <span class="icon">&#128227;</span> <!-- Alert icon -->
+                        <h3>Emergências</h3>
+                        <p>Falta de água inesperada? Conte com nosso serviço emergencial para restabelecer o fornecimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="section reviews-section">
+            <div class="container">
+                <h2 class="section-heading">Como Funciona a Entrega de Água Pipa?</h2>
+                <div class="grid-4-cols how-it-works">
+                    <div class="grid-item">
+                        <h3>Contato Rápido</h3>
+                        <p>Entre em contato conosco via WhatsApp ou telefone para um atendimento ágil e personalizado.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Orçamento Personalizado</h3>
+                        <p>Descreva sua necessidade e receba uma proposta clara e sem surpresas, com o melhor custo-benefício.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Entrega Pontual</h3>
+                        <p>Agendamos a entrega do caminhão pipa no local e horário combinados, com eficiência e segurança.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Água de Qualidade</h3>
+                        <p>Receba água potável certificada, entregue com higiene e a garantia de um serviço premium.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="section">
+            <div class="container">
+                <h2 class="section-heading">O que nossos clientes dizem sobre nós?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--secondary-color);">Nota Google: 5.0 (3 avaliações)</p>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Atendimento excelente e entrega super rápida! A Águas Mananciais salvou meu dia. Recomendo muito!"</p>
+                        <div class="author">- João Silva</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Precisava de água para minha obra com urgência e eles foram muito eficientes. Qualidade impecável da água."</p>
+                        <div class="author">- Maria Oliveira</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Serviço profissional e preço justo. Minha piscina ficou pronta em tempo recorde. Nota 10!"</p>
+                        <div class="author">- Carlos Souza</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bairros" class="section reviews-section">
+            <div class="container">
+                <h2 class="section-heading">Atendemos todo o Rio de Janeiro e Região</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Nossa frota está pronta para atender suas necessidades em diversas localidades.</p>
+                <ul class="bairros-list">
+                    <li>Zona Oeste</li>
+                    <li>Zona Norte</li>
+                    <li>Baixada Fluminense</li>
+                    <li>Niterói</li>
+                    <li>Centro</li>
+                    <li>Zona Sul</li>
+                    <li>Barra da Tijuca</li>
+                    <li>Recreio dos Bandeirantes</li>
+                    <li>Jacarepaguá</li>
+                    <li>Campo Grande</li>
+                    <li>Santa Cruz</li>
+                    <li>Bangu</li>
+                    <li>Duque de Caxias</li>
+                    <li>São João de Meriti</li>
+                    <li>Nova Iguaçu</li>
+                    <li>Queimados</li>
+                    <li>Magé</li>
+                    <li>Guapimirim</li>
+                    <li>Itaboraí</li>
+                    <li>São Gonçalo</li>
+                    <li>Maricá</li>
+                    <li>Cachoeiras de Macacu</li>
+                    <li>E muito mais!</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="localizacao" class="section map-section">
+            <div class="container">
+                <h2 class="section-heading">Nossa Localização</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Estamos estrategicamente localizados para atender você com agilidade.</p>
+                <div class="map-wrapper">
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-43.2729%2C-22.9568%2C-43.1129%2C-22.8568&layer=mapnik&marker=-22.9068%2C-43.1929" style="filter:invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85);"></iframe>
+                </div>
+                <p style="margin-top: 2rem; font-size: 1.1rem;">Endereço: Estr. dos Bandeirantes, 13831</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=%C3%81guas%20Mananciais%20Caminh%C3%A3o%20Pipa&query_place_id=ChIJ9zGPMwDdmwARl7E9GIsJWS8" target="_blank" rel="noopener noreferrer" style="color: var(--secondary-color); font-weight: 600;">Ver no Google Maps</a>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Precisa de água agora? Não perca tempo!</h2>
+                <p>Entre em contato com a Águas Mananciais Caminhão Pipa e garanta o abastecimento com rapidez, qualidade e o melhor atendimento.</p>
+                <a href="https://wa.me/5521964076066" target="_blank" rel="noopener noreferrer" class="btn">Fale Conosco Pelo WhatsApp</a>
+                <p class="payment-methods">Aceitamos: PIX, Dinheiro, Cartão de Crédito/Débito e Transferência Bancária.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
         <div class="container">
-            <div class="section-header reveal">
-                <span class="section-eyebrow">O Problema</span>
-                <h2>Sabemos o Quanto é Desesperador<br>Ficar Sem Água</h2>
-                <p>Você não está sozinho. Centenas de famílias e empresas enfrentam isso diariamente no Rio de Janeiro.</p>
-            </div>
-            
-            <div class="pain-grid">
-                <div class="pain-card reveal">
-                    <div class="pain-icon">🏠</div>
-                    <h3>Caixa d'água Vazia</h3>
-                    <p>A água acabou no meio do dia e a família toda está sem poder tomar banho, lavar louça ou usar o banheiro.</p>
-                </div>
-                
-                <div class="pain-card reveal">
-                    <div class="pain-icon">🏢</div>
-                    <h3>Obra Parada</h3>
-                    <p>Seu projeto atrasando e perdendo dinheiro porque falta água para continuar a construção.</p>
-                </div>
-                
-                <div class="pain-card reveal">
-                    <div class="pain-icon">⏰</div>
-                    <h3>Espera Sem Prazo</h3>
-                    <p>Você liga para a companhia de água e ninguém sabe quando o abastecimento volta. Pode ser horas ou dias.</p>
-                </div>
-                
-                <div class="pain-card reveal">
-                    <div class="pain-icon">😰</div>
-                    <h3>Condomínio em Crise</h3>
-                    <p>Dezenas de famílias sem água, síndico pressionado e urgência para resolver antes que vire um caos.</p>
-                </div>
-            </div>
+            <p>&copy; 2023 Águas Mananciais Caminhão Pipa. Todos os direitos reservados.</p>
+            <p>Telefone: <a href="tel:+5521964076066">+55 21 96407-6066</a></p>
+            <p>Endereço: Estr. dos Bandeirantes, 13831 - Rio de Janeiro</p>
+            <p>Site desenvolvido por <a href="#" style="text-decoration: none; cursor: default;">APH Digital</a></p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Reviews -->
-    <section style="background: rgba(242, 244, 248, 0.02);">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-eyebrow">Depoimentos</span>
-                <h2>O Que Nossos Clientes Dizem</h2>
-                <p>Centenas de famílias e empresas já resolveram a falta de água conosco</p>
-            </div>
-            
-            <div class="reviews-grid">
-                <div class="review-card reveal">
-                    <div class="review-header">
-                        <div class="review-avatar">A</div>
-                        <div class="review-info">
-                            <h4>Cliente Verificado</h4>
-                            <div class="review-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="review-text">"Atendimento rápido e profissional. A água chegou em menos de 2 horas e resolveu nosso problema. Recomendo!"</p>
-                    <span class="review-badge">
-                        <span class="google-icon"></span>
-                        Avaliação Google
-                    </span>
-                </div>
-                
-                <div class="review-card reveal">
-                    <div class="review-header">
-                        <div class="review-avatar">B</div>
-                        <div class="review-info">
-                            <h4>Cliente Verificado</h4>
-                            <div class="review-stars">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="review-text">"Excelente serviço! Precisei de água urgente para minha obra e a entrega foi pontual. Empresa séria e confiável."</p>
-                    <span class="review-badge">
-                        <span class="google-icon"></span>
-                        Avaliação Google
+    <a href="https://wa.me/5521964076066"
+</body>
+</html>
